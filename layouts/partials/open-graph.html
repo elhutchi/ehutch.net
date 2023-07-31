@@ -1,0 +1,8 @@
+    {{ if .Params.page_title }}<meta property="og:title" content="{{ .Params.page_title }}" />{{ end }}
+    {{ if .Params.meta_description }}<meta property="og:description" content="{{ .Params.meta_description }}" />{{ end }}
+    <meta property="og:url" content="{{ .Permalink }}" />
+    {{ if .Params.image }}<meta property="og:image" content="{{ .Site.BaseURL }}{{ .Params.image }}" />
+    {{ else if .Params.site_image }}<meta property="og:image" content="{{ .Site.BaseURL }}{{ .Params.site_image }}" />
+    {{ else if $.Site.Data.company.logo_image }}<meta property="og:image" content="{{ .Site.BaseURL }}{{ $.Site.Data.company.logo_image }}" />{{ end }}
+    {{ if $.Site.Data.company.name }}<meta property="og:site_name" content="{{ $.Site.Data.company.name }}" />
+    {{ else }}<meta property="og:site_name" content="{{ .Title }}" />{{ end }}

@@ -1,0 +1,26 @@
+[build]
+  command = "hugo --gc --minify"
+  publish = "public"
+
+[build.environment]
+  HUGO_VERSION = "0.93.3"
+  HUGO_ENV = "production"
+
+[build.branch-deploy]
+  command = "hugo --gc --minify --buildDrafts"
+
+[build.branch-deploy.environment]
+  HUGO_ENV = "development"
+
+[build.processing]
+  skip_processing = true
+[build.processing.css]
+  bundle = false
+  minify = false
+[build.processing.js]
+  bundle = false
+  minify = false
+[build.processing.html]
+  pretty_urls = false
+[build.processing.images]
+  compress = false

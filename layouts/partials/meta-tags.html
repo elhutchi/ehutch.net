@@ -1,0 +1,10 @@
+{{- if and .IsHome (not $.Params.page_title) }}
+    <title>{{ $.Site.Data.person.name }}</title>
+{{- else if .Params.page_title }}
+    <title>{{ .Params.page_title }}</title>
+{{- else }}
+    <title>{{ .Title }} - {{ $.Site.Data.person.name }}</title>
+{{- end -}}
+{{- if .Params.meta_description }}
+    <meta name="description" content="{{ .Params.meta_description }}" />
+{{- end }}

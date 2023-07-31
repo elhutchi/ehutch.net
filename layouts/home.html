@@ -1,0 +1,68 @@
+{{ define "main" }}
+
+<!--section>
+    <div class="content">
+        {{ with (.Site.GetPage "about") }}
+            <h2>{{ .Title }}</h2>
+            {{ .Content }}
+        {{ end }}
+    </div>
+</section-->
+
+<section id="hobbies">
+    <div class="content">
+
+        {{ with (.Site.GetPage "about").Resources.GetMatch "hobbies.md" }}
+            <!--h2>{{ .Title }}</h2-->
+        {{ end }}
+
+        {{ with (.Site.GetPage "sculptures") }}
+        <section id="sculptures">
+                <h2>{{ .Title }}</h2>
+
+                <p>
+                    I started snow carving in 2000 and sand carving in 2002. Since then, I've created <a href="/sculptures/">
+                        {{ len (where .Pages "Params.media" "snow") }} snow sculptures
+                        and {{ len (where .Pages "Params.media" "sand") }} sand sculptures</a>.
+                </p>
+                <p>Here are some of the most recent ones:</p>
+                <p>&nbsp;</p>
+                <ul class="sculptures">
+                    {{- range first 5 (sort .Pages ".Params.year" "desc") -}}
+                    {{ $page := . }}
+                    <li class="sculpture">
+                        <div class="sculpture--imagecontainer">
+                            {{ with index (.Resources.ByType "image") 0 }}
+                            <a href="{{ $page.RelPermalink }}">
+                                <img class="sculpture--image"
+                                    alt="thumbnail of {{ $page.Title }} {{ $page.Params.media }} sculpture"
+                                    src="{{ ((.).Fit "300x300 webp photo").RelPermalink }}"
+                                loading="lazy">
+                            </a>
+                            {{ end }}
+                        </div>
+                        <div class="sculpture--details">
+                            <h3 class="sculpture--title"><a href="{{ .RelPermalink }}">{{ .Title | title }}</a></h3>
+                            <p>
+                                {{ .Params.media | title }} Sculpture 
+                                    {{ with .Params.competition }} in the {{ . }} competition {{ end }} at <strong>{{ .Params.event }}</strong> in {{ .Params.year}}
+                        {{- if .Params.awards }}<p><em>{{ delimit .Params.awards ", " " and " }}</em></p>{{ end -}}
+
+                            </p>
+                        </div>
+                    </li>
+                    {{ end }}
+                </ul>
+
+        </section>
+
+        {{ with (.Site.GetPage "about").Resources.GetMatch "hobbies.md" }}
+            <h3 style="clear: both;">Other hobbies</h3>
+            {{ .Content }}
+        {{ end }}
+
+        {{ end }}
+
+    </div>
+</section>
+{{ end }}

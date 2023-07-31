@@ -1,0 +1,33 @@
+{{ define "main" }}
+{{ $page := . }}
+{{ $teamMembers := delimit .Params.team_members ", " " and " }}
+<section class="section">
+  <div class="section__inner content">
+    <h1>{{ .Title }}</h1>
+
+
+
+    {{ with .Resources.ByType "image" }}
+    {{ range . }}
+    <a href="{{ .RelPermalink }}">
+      <img
+           src="{{ ((.).Fit "600x600 webp photo").RelPermalink }}"
+           alt="{{ $page.Title }} {{ $page.Params.media }} sculpture"
+         title="{{ $page.Title }} {{ $page.Params.media }} sculpture"
+         class="sculpture-detail--image">
+
+    </a>
+    {{ end }}
+    {{ end }}
+
+    <p>
+      A {{ .Params.media }} sculpture created by {{ $teamMembers }} 
+      at {{ .Params.event }}
+      {{- with .Params.competition }} in the {{ . }} competition{{ end -}}
+      {{- if .Params.awards }} where they received <strong>{{ delimit .Params.awards ", " " and " }}</strong>{{ end -}}.
+    </p>
+
+    {{ .Content }}
+  </div>
+</section>
+{{ end }}

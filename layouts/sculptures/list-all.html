@@ -1,0 +1,9 @@
+    <ul>
+        {{- range sort .Pages ".Params.year" "desc" -}}
+        <li>
+            <strong>{{ .Params.year }} - <a href="{{ .RelPermalink }}">{{ .Title }}</a></strong> ({{ .Params.media | title }}) <br>
+            {{ .Params.event }}{{- with .Params.competition }} {{ . }} competition{{ end }}
+            {{ if .Params.awards }}<br>{{ delimit .Params.awards ", " " and " }}{{ end }}
+        </li>
+        {{ end }}
+    </ul>

@@ -1,0 +1,11 @@
+    {{ range (.Pages.GroupByParam "year").Reverse }}
+    <h4>{{ .Key }}</h4> 
+    <ul>
+        {{- range .Pages -}}
+        <li>
+            <strong>{{ .Params.media | title }} Sculpting</strong> at {{ .Params.event }}{{- with .Params.competition }} {{ . }} competition{{ end }}
+            {{- if .Params.awards }}, {{ delimit .Params.awards ", " " and " }}{{ end }}
+        </li>
+        {{ end }}
+    </ul>
+    {{ end }}
