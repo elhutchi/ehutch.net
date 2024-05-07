@@ -3,7 +3,7 @@ title: Coming In Hot
 layout: page
 media: snow
 event: Zehnder's Snowfest
-competition: International Single Block
+competition: World Class Single Block
 year: 2020
 team_members:
   - Eric Hutchinson

@@ -2,7 +2,7 @@
 title: Elephant in a tub
 media: snow
 event: Zehnder's Snowfest
-competition: International Single Block
+competition: World Class Single Block
 year: 2018
 team_members:
   - Eric Hutchinson

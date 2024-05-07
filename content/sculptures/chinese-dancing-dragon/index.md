@@ -3,7 +3,7 @@ title: Chinese Dancing Dragon
 layout: page
 media: snow
 event: Zehnder's Snowfest
-competition: International Single Block
+competition: World Class Single Block
 year: 2019
 team_members:
   - Eric Hutchinson
