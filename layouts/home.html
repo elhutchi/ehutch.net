@@ -21,7 +21,7 @@
                 <h2>{{ .Title }}</h2>
 
                 <p>
-                    I started snow carving in 2000 and sand carving in 2002. Since then, I've created <a href="/sculptures/">
+                    I started snow carving in 2000 and sand carving in 2002. Since then, I've created <a href="{{ .RelPermalink }}">
                         {{ len (where .Pages "Params.media" "snow") }} snow sculptures
                         and {{ len (where .Pages "Params.media" "sand") }} sand sculptures</a>.
                 </p>
