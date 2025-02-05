@@ -8,6 +8,7 @@
 
 
     {{ with .Resources.ByType "image" }}
+    <div class="sculpture-detail--images">
     {{ range . }}
     <a href="{{ .RelPermalink }}">
       <img
@@ -18,6 +19,7 @@
 
     </a>
     {{ end }}
+    </div>
     {{ end }}
 
     <p>
