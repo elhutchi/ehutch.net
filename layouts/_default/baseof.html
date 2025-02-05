@@ -10,9 +10,6 @@
     <link rel="stylesheet" href="{{ $style.RelPermalink }}">
     <link href="https://fonts.googleapis.com/css?family=Oswald:400|Open+Sans:400,400italic,700,700italic" rel="stylesheet">
     {{- partial "site-icons.html" . }}
-    {{ if hugo.IsProduction }}
-    <script defer data-domain="ehutch.net" src="https://plausible.io/js/script.js"></script>
-    {{ end }}
     <link href="https://mastodon.online/@ehutch" rel="me">
   </head>
   <body class="pg {{ .Params.class }} bg">
