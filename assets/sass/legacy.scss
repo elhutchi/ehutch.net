@@ -103,24 +103,25 @@ body > footer a { color: #ccc; }
   padding: 0;
 }
 .sculpture {
-  clear: both;
   padding: 0;
   margin: 0 0 3em 0;
   list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items:flex-start;
 
   &--imagecontainer {
-    height: 170px;
-    float: left;
+    width: 300px;
     margin-right: 1em;
   }
   &--image {
-    max-height: 170px;
-    width: 170px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 
   &--details {
-    position: relative;
-    margin-left: 180px;
+    width: 100%;
   }
   &--title {
     margin-bottom: 0.4em;
@@ -128,8 +129,20 @@ body > footer a { color: #ccc; }
 
 }
 
+.sculpture-detail--images {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
 .sculpture-detail--image {
-  max-width: 100%;
+  width: 45%;
+  margin: 0 0 1em 0;
+  padding: 0;
+  list-style: none;
 }
 
 // page layout
