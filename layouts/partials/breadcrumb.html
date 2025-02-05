@@ -1,0 +1,27 @@
+<ol class="breadcrumbs">
+{{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
+</ol>
+
+{{ define "breadcrumbnav" }}
+    {{ $parent := .p1.Parent }}
+    {{ if .p1.Params.breadcrumb.parent }}
+        {{ $parent = site.GetPage .p1.Params.breadcrumb.parent }}
+    {{ end }}
+    {{ if $parent }}
+        {{ template "breadcrumbnav" (dict "p1" $parent "p2" .p2 )  }}
+    {{ else if not .p1.IsHome }}
+        {{ template "breadcrumbnav" (dict "p1" .p1.Site.Home "p2" .p2 )  }}
+    {{ end }}
+
+    {{ $url := .p1.Params.breadcrumb.url | default .p1.RelPermalink }}
+
+    {{ if not .p1.Params.breadcrumb.hide }}
+    <li class="breadcrumbs__item{{ if eq .p1 .p2 }} breadcrumbs__item--selected{{ end }}">
+    {{- if and (ne .p1 .p2) (ne $url "") -}}
+        <a class="breadcrumbs__link" href="{{ $url }}">{{ .p1.Params.breadcrumb.title | default .p1.Title }}</a>
+    {{- else -}}
+        {{ .p1.Params.breadcrumb.title | default .p1.Title }}
+    {{- end -}}
+    </li>
+    {{ end }}
+{{ end }}

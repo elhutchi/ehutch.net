@@ -24,6 +24,14 @@
         </div>
       </header>
 
+      {{ if ne .RelPermalink "/" }}
+      <section class="section" style="border:none">
+        <div class="section__inner section__inner--collapse">
+              {{ partial "breadcrumb.html" . }}
+        </div>
+      </section>
+      {{ end }}
+      
       {{ block "main" . }}{{ end }}
     
       <footer id="body-footer">
