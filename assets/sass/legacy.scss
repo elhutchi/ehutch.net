@@ -132,17 +132,22 @@ body > footer a { color: #ccc; }
 .sculpture-detail--images {
   display: flex;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: flex-end;
   flex-wrap: wrap;
+  gap: 1em;
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 
 .sculpture-detail--image {
   width: 45%;
-  margin: 0 0 1em 0;
   padding: 0;
+  margin: 0 0 1em 0;
   list-style: none;
+   img {
+    width: 100%;
+   }
 }
 
 // page layout
