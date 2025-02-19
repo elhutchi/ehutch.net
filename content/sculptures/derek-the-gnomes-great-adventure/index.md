@@ -12,3 +12,5 @@ team_members:
   - Eric Hutchinson
   - Patrick Stefaniak
 ---
+
+A gnome and a snail looking off into the distance while standing under a mushroom.
