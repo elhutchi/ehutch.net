@@ -11,6 +11,10 @@
 {{ $PageImage := "" }}
 {{- with $.Params.images -}}
 {{- with index . 0 }}{{ $PageImage = $.Page.Resources.GetMatch . }}{{ end -}}
+{{ else }}
+  {{- with $.Resources.ByType "image" -}}
+    {{- with index . 0 }}{{ $PageImage = . }}{{ end -}}
+  {{ end -}}
 {{ end -}}
 
 {{- /* Open Graph (https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/opengraph.html) */}}
