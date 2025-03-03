@@ -1,5 +1,5 @@
 ---
-title: "Derek the Gnome's Great Adventure"
+title: "Derek the Gnome's Great Big Day"
 layout: page
 media: snow
 event: Zehnder's Snowfest
