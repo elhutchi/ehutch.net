@@ -11,6 +11,8 @@ team_members:
   - Spencer Scharf
   - Eric Hutchinson
   - Patrick Stefaniak
+aliases:
+- /sculptures/derek-the-gnomes-great-adventure
 ---
 
 A gnome and a snail looking off into the distance while standing under a mushroom.
