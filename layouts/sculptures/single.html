@@ -9,8 +9,9 @@
 
     {{ with .Resources.ByType "image" }}
     <div class="sculpture-detail--images">
+    {{ $numImages := len . }}
     {{ range . }}
-    <a href="{{ .RelPermalink }}" class="sculpture-detail--image">
+    <a href="{{ .RelPermalink }}" class="sculpture-detail--image sculpture-detail--image{{ if eq $numImages 1 }}--single{{ else }}--multiple{{ end }}">
       <img
            src="{{ ((.).Fit "600x600 webp photo").RelPermalink }}"
            alt="{{ $page.Title }} {{ $page.Params.media }} sculpture"
