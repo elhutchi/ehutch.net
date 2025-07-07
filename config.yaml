@@ -5,6 +5,10 @@ disableKinds:
 - RSS
 - taxonomy
 
+params:
+  images:
+  - about/profile.png
+
 minify:
   disableCSS: false
   disableHTML: false
