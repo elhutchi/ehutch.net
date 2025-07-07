@@ -1,10 +1,9 @@
 baseURL: https://www.ehutch.net/
 languageCode: "en-us"
-title: "Eric Hutchinson's Website"
+title: "Eric Hutchinson"
 disableKinds:
 - RSS
 - taxonomy
-- taxonomyTerm
 
 minify:
   disableCSS: false

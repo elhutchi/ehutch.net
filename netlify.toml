@@ -3,7 +3,7 @@
   publish = "public"
 
 [build.environment]
-  HUGO_VERSION = "0.93.3"
+  HUGO_VERSION = "0.147.9"
   HUGO_ENV = "production"
 
 [build.branch-deploy]

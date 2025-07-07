@@ -1,6 +1,7 @@
 ---
-title: Home
-page_title: Eric Hutchinson
-page_description: Home page for Eric Hutchinson
+#title: Eric Hutchinson
+description: Home page for Eric Hutchinson
+breadcrumb:
+  title: Home
 layout: home
 ---
