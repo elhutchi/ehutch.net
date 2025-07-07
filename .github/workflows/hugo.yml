@@ -31,7 +31,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.124.1
+      HUGO_VERSION: 0.147.9
     steps:
       - name: Install Hugo CLI
         run: |
@@ -58,6 +58,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
+          retention-days: 5  # Adding a retention period for the uploaded artifact
 
   # Deployment job
   deploy:
