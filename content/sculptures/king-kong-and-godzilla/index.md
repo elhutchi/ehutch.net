@@ -7,6 +7,6 @@ year: 2001
 team_members:
   - Eric Hutchinson
   - Sarah Maxson
-  - Kari McCullough
+  - Kari Mac
 awards: 
 ---

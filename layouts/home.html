@@ -44,7 +44,7 @@
                         <div class="sculpture--details">
                             <h3 class="sculpture--title"><a href="{{ .RelPermalink }}">{{ .Title | title }}</a></h3>
                             <p>
-                                {{ .Params.media | title }} Sculpture 
+                                {{ .Params.media | title }} sculpture 
                                     {{ with .Params.competition }} in the {{ . }} competition {{ end }} at <strong>{{ .Params.event }}</strong> in {{ .Params.year}}
                         {{- if .Params.awards }}<p><em>{{ delimit .Params.awards ", " " and " }}</em></p>{{ end -}}
 

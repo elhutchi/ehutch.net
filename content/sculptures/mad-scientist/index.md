@@ -6,7 +6,7 @@ competition: High School
 year: 2000
 team_members:
   - Eric Hutchinson
-  - Kari McCullough
+  - Kari Mac
   - Sarah Maxson
   - Kris Edler
 awards: 

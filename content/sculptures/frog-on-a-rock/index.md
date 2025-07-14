@@ -2,7 +2,7 @@
 title: "Frog on a Rock"
 layout: page
 media: sand
-event: The Point in Saginaw
+event: Saginaw Sun & Sand
 competition: 
 awards:
 year: 2022
