@@ -1,0 +1,7 @@
+{{- $title := or .Title site.Title site.Params.title | plainify }}
+
+{{- if and .IsPage (eq .Type "sculptures") }}
+  {{- $title = printf "\"%s\" %s sculpture at %s (%d)" .Title .Params.media .Params.event .Params.year }}
+{{- end }}
+
+{{- $title | title -}}
