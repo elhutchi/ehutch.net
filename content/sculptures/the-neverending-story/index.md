@@ -3,7 +3,7 @@ title: "The Neverending Story"
 layout: page
 media: sand
 event: Saginaw Sun & Sand
-competition: Semi-Professional
+competition: Semi-Pro
 awards:
 year: 2025
 team_members:
