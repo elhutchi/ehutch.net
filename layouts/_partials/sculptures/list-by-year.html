@@ -1,0 +1,33 @@
+    {{ range (.Pages.GroupByParam "year").Reverse }}
+    <div>
+        <h3>{{ .Key }}</h3> 
+        <ul class="sculptures">
+            {{- range (.Pages.ByParam "media") -}}
+            {{ $page := . }}
+            <li class="sculpture">
+                <div class="sculpture--imagecontainer">
+                    {{ with index (.Resources.ByType "image") 0 }}
+                    <a href="{{ $page.RelPermalink }}">
+                        <img class="sculpture--image"
+                               alt="thumbnail of {{ $page.Title }} {{ $page.Params.media }} sculpture"
+                               src="{{ ((.).Fit "300x300 webp photo").RelPermalink }}"
+                           loading="lazy">
+                    </a>
+                    {{ end }}
+                </div>
+                <div class="sculpture--details">
+                    <h3 class="sculpture--title"><a href="{{ .RelPermalink }}">{{ .Title | title }}</a></h3>
+                    <p>
+                        <strong>By:</strong> {{ delimit .Params.team_members ", " " and " }}
+                        <br><strong>Medium:</strong> {{ .Params.media | title }}
+                        <br><strong>Event:</strong> {{ with .Params.competition }}{{ . }} competition at {{ end }} {{ .Params.event }}
+                        
+                        {{- if .Params.awards }}<br><strong>Awards:</strong> {{ delimit .Params.awards ", " " and " }}{{ end -}}
+                    </p>
+                </div>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+    {{ end }}
+
