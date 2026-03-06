@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{{ $style.RelPermalink }}">
     <link href="https://fonts.googleapis.com/css?family=Oswald:400|Open+Sans:400,400italic,700,700italic" rel="stylesheet">
     {{- partial "site-icons.html" . }}
-    {{- if and hugo.IsProduction site.Params.umami_site_id }}
+    {{- if and hugo.IsProduction site.Params.umami.site_id }}
     <script defer src="{{ site.Params.umami.url | default "https://data.geek-s.top/script.js" }}" data-website-id="{{ site.Params.umami.site_id }}"></script>
     {{- end }}
     <link href="https://mastodon.online/@ehutch" rel="me">
