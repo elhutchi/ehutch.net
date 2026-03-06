@@ -8,6 +8,9 @@ disableKinds:
 params:
   images:
   - about/profile.png
+  umami:
+    url: https://data.geek-s.top/script.js
+    site_id: 21db9f18-1e5b-4837-ae6d-f5b1e1f53e6c
 
 minify:
   disableCSS: false
